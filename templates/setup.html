@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block title %}Create administrator · StockWise{% endblock %}{% block content %}
+<section class="auth-card"><p class="eyebrow">FIRST-TIME SETUP</p><h1>Welcome to StockWise</h1><p>Create the administrator account for your inventory system.</p>
+<form method="post"><label>Full name<input name="full_name" required autofocus></label><label>Username<input name="username" required></label><label>Password <small>(at least 8 characters)</small><input name="password" type="password" minlength="8" required></label><button>Create administrator account</button></form></section>
+{% endblock %}

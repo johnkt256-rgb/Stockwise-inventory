@@ -1,0 +1,5 @@
+{% extends 'base.html' %}{% block title %}Issue stock (FEFO) · StockWise{% endblock %}{% block content %}
+<header class="page-head"><div><p class="eyebrow">FEFO STOCK ISSUE</p><h1>Issue stock</h1><p>The system automatically uses the oldest safe expiry batch first.</p></div></header>
+<section class="panel form-panel"><form method="post" class="grid-form"><label>Product<select name="product_id" required><option value="">Choose product</option>{% for p in products %}<option value="{{ p['id'] }}">{{ p['name'] }} — {{ p['stock'] }} {{ p['unit'] }} available</option>{% endfor %}</select></label><label>Quantity to issue<input name="quantity" type="number" min="1" required></label><label class="wide">Reason / notes<input name="notes" placeholder="e.g. Sale order, ward issue, customer order"></label><div><button>Issue using FEFO</button></div></form></section>
+<section class="callout"><strong>How FEFO protects your business:</strong> expired stock is excluded, then available batches are selected by nearest expiry date. This reduces waste and supports safer stock rotation.</section>
+{% endblock %}
